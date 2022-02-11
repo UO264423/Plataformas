@@ -1,0 +1,50 @@
+﻿Actor.obj : error LNK2019: símbolo externo SDL_RenderCopyEx sin resolver al que se hace referencia en la función "public: virtual void __cdecl Actor::draw(float)" (?draw@Actor@@UEAAXM@Z)
+Animation.obj : error LNK2001: símbolo externo SDL_RenderCopyEx sin resolver
+Audio.obj : error LNK2019: símbolo externo SDL_RWFromFile sin resolver al que se hace referencia en la función "public: __cdecl Audio::Audio(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,bool)" (??0Audio@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z)
+Audio.obj : error LNK2019: símbolo externo SDL_OpenAudioDevice sin resolver al que se hace referencia en la función "public: __cdecl Audio::Audio(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,bool)" (??0Audio@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z)
+Audio.obj : error LNK2019: símbolo externo SDL_PauseAudioDevice sin resolver al que se hace referencia en la función "public: void __cdecl Audio::play(void)" (?play@Audio@@QEAAXXZ)
+Audio.obj : error LNK2019: símbolo externo SDL_LoadWAV_RW sin resolver al que se hace referencia en la función "public: __cdecl Audio::Audio(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,bool)" (??0Audio@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z)
+Audio.obj : error LNK2019: símbolo externo SDL_FreeWAV sin resolver al que se hace referencia en la función "public: __cdecl Audio::~Audio(void)" (??1Audio@@QEAA@XZ)
+Audio.obj : error LNK2019: símbolo externo SDL_QueueAudio sin resolver al que se hace referencia en la función "public: void __cdecl Audio::play(void)" (?play@Audio@@QEAAXXZ)
+Audio.obj : error LNK2019: símbolo externo SDL_GetQueuedAudioSize sin resolver al que se hace referencia en la función "public: void __cdecl Audio::play(void)" (?play@Audio@@QEAAXXZ)
+Audio.obj : error LNK2019: símbolo externo SDL_ClearQueuedAudio sin resolver al que se hace referencia en la función "public: void __cdecl Audio::play(void)" (?play@Audio@@QEAAXXZ)
+Audio.obj : error LNK2019: símbolo externo SDL_CloseAudioDevice sin resolver al que se hace referencia en la función "public: __cdecl Audio::~Audio(void)" (??1Audio@@QEAA@XZ)
+Audio.obj : error LNK2019: símbolo externo Mix_OpenAudio sin resolver al que se hace referencia en la función "public: __cdecl Audio::Audio(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,bool)" (??0Audio@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z)
+Audio.obj : error LNK2019: símbolo externo Mix_LoadMUS sin resolver al que se hace referencia en la función "public: __cdecl Audio::Audio(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,bool)" (??0Audio@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z)
+Audio.obj : error LNK2019: símbolo externo Mix_FreeMusic sin resolver al que se hace referencia en la función "public: __cdecl Audio::~Audio(void)" (??1Audio@@QEAA@XZ)
+Audio.obj : error LNK2019: símbolo externo Mix_PlayMusic sin resolver al que se hace referencia en la función "public: void __cdecl Audio::play(void)" (?play@Audio@@QEAAXXZ)
+Audio.obj : error LNK2019: símbolo externo Mix_CloseAudio sin resolver al que se hace referencia en la función "public: __cdecl Audio::~Audio(void)" (??1Audio@@QEAA@XZ)
+Game.obj : error LNK2019: símbolo externo SDL_GetError sin resolver al que se hace referencia en la función "public: __cdecl Game::Game(void)" (??0Game@@QEAA@XZ)
+Game.obj : error LNK2019: símbolo externo SDL_GetCurrentDisplayMode sin resolver al que se hace referencia en la función "public: void __cdecl Game::scale(void)" (?scale@Game@@QEAAXXZ)
+Game.obj : error LNK2019: símbolo externo SDL_SetWindowTitle sin resolver al que se hace referencia en la función "public: __cdecl Game::Game(void)" (??0Game@@QEAA@XZ)
+Game.obj : error LNK2019: símbolo externo SDL_SetWindowSize sin resolver al que se hace referencia en la función "public: void __cdecl Game::scale(void)" (?scale@Game@@QEAAXXZ)
+Game.obj : error LNK2019: símbolo externo SDL_SetHint sin resolver al que se hace referencia en la función "public: __cdecl Game::Game(void)" (??0Game@@QEAA@XZ)
+Game.obj : error LNK2019: símbolo externo SDL_CreateWindowAndRenderer sin resolver al que se hace referencia en la función "public: __cdecl Game::Game(void)" (??0Game@@QEAA@XZ)
+Game.obj : error LNK2019: símbolo externo SDL_CreateTextureFromSurface sin resolver al que se hace referencia en la función "public: struct SDL_Texture * __cdecl Game::getTexture(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?getTexture@Game@@QEAAPEAUSDL_Texture@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+Text.obj : error LNK2001: símbolo externo SDL_CreateTextureFromSurface sin resolver
+Game.obj : error LNK2019: símbolo externo SDL_RenderSetScale sin resolver al que se hace referencia en la función "public: void __cdecl Game::scale(void)" (?scale@Game@@QEAAXXZ)
+Game.obj : error LNK2019: símbolo externo SDL_GetTicks sin resolver al que se hace referencia en la función "public: void __cdecl Game::loop(void)" (?loop@Game@@QEAAXXZ)
+Game.obj : error LNK2019: símbolo externo SDL_Delay sin resolver al que se hace referencia en la función "public: void __cdecl Game::loop(void)" (?loop@Game@@QEAAXXZ)
+Game.obj : error LNK2019: símbolo externo SDL_Init sin resolver al que se hace referencia en la función "public: __cdecl Game::Game(void)" (??0Game@@QEAA@XZ)
+Game.obj : error LNK2019: símbolo externo IMG_Load sin resolver al que se hace referencia en la función "public: struct SDL_Texture * __cdecl Game::getTexture(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?getTexture@Game@@QEAAPEAUSDL_Texture@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+Game.obj : error LNK2019: símbolo externo TTF_Init sin resolver al que se hace referencia en la función "public: __cdecl Game::Game(void)" (??0Game@@QEAA@XZ)
+Game.obj : error LNK2019: símbolo externo TTF_OpenFont sin resolver al que se hace referencia en la función "public: __cdecl Game::Game(void)" (??0Game@@QEAA@XZ)
+GameLayer.obj : error LNK2019: símbolo externo SDL_GameControllerOpen sin resolver al que se hace referencia en la función "public: __cdecl GameLayer::GameLayer(class Game *)" (??0GameLayer@@QEAA@PEAVGame@@@Z)
+MenuLayer.obj : error LNK2001: símbolo externo SDL_GameControllerOpen sin resolver
+GameLayer.obj : error LNK2019: símbolo externo SDL_GameControllerGetAxis sin resolver al que se hace referencia en la función "public: void __cdecl GameLayer::gamePadToControls(union SDL_Event)" (?gamePadToControls@GameLayer@@QEAAXTSDL_Event@@@Z)
+GameLayer.obj : error LNK2019: símbolo externo SDL_GameControllerGetButton sin resolver al que se hace referencia en la función "public: void __cdecl GameLayer::gamePadToControls(union SDL_Event)" (?gamePadToControls@GameLayer@@QEAAXTSDL_Event@@@Z)
+MenuLayer.obj : error LNK2001: símbolo externo SDL_GameControllerGetButton sin resolver
+GameLayer.obj : error LNK2019: símbolo externo SDL_PollEvent sin resolver al que se hace referencia en la función "public: virtual void __cdecl GameLayer::processControls(void)" (?processControls@GameLayer@@UEAAXXZ)
+MenuLayer.obj : error LNK2001: símbolo externo SDL_PollEvent sin resolver
+GameLayer.obj : error LNK2019: símbolo externo SDL_RenderPresent sin resolver al que se hace referencia en la función "public: virtual void __cdecl GameLayer::draw(void)" (?draw@GameLayer@@UEAAXXZ)
+MenuLayer.obj : error LNK2001: símbolo externo SDL_RenderPresent sin resolver
+Text.obj : error LNK2019: símbolo externo SDL_FreeSurface sin resolver al que se hace referencia en la función "public: void __cdecl Text::draw(void)" (?draw@Text@@QEAAXXZ)
+Text.obj : error LNK2019: símbolo externo SDL_RenderCopy sin resolver al que se hace referencia en la función "public: void __cdecl Text::draw(void)" (?draw@Text@@QEAAXXZ)
+Text.obj : error LNK2019: símbolo externo SDL_DestroyTexture sin resolver al que se hace referencia en la función "public: void __cdecl Text::draw(void)" (?draw@Text@@QEAAXXZ)
+Text.obj : error LNK2019: símbolo externo TTF_RenderText_Blended sin resolver al que se hace referencia en la función "public: void __cdecl Text::draw(void)" (?draw@Text@@QEAAXXZ)
+C:\videojuegos\lib\SDL2.lib : warning LNK4272: el tipo de máquina de biblioteca 'x86' está en conflicto con el tipo de máquina de destino 'x64'
+C:\videojuegos\lib\SDL2main.lib : warning LNK4272: el tipo de máquina de biblioteca 'x86' está en conflicto con el tipo de máquina de destino 'x64'
+C:\videojuegos\lib\SDL2_image.lib : warning LNK4272: el tipo de máquina de biblioteca 'x86' está en conflicto con el tipo de máquina de destino 'x64'
+C:\videojuegos\lib\SDL2_ttf.lib : warning LNK4272: el tipo de máquina de biblioteca 'x86' está en conflicto con el tipo de máquina de destino 'x64'
+C:\videojuegos\lib\SDL2_mixer.lib : warning LNK4272: el tipo de máquina de biblioteca 'x86' está en conflicto con el tipo de máquina de destino 'x64'
+C:\Users\Lucas Suárez Cabal\Desktop\Plataformas\NavesL4\x64\Debug\NavesL4.exe : fatal error LNK1120: 38 externos sin resolver
