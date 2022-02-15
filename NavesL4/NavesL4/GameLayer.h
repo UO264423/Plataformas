@@ -13,6 +13,7 @@
 
 #include "Audio.h"
 #include "Space.h" // importar
+#include "Item.h";
 
 #include <fstream> // Leer ficheros
 #include <sstream> // Leer líneas / String
@@ -57,6 +58,7 @@ public:
 	list<Gooba*> goobas;
 	list<Projectile*> projectiles;
 	list<Projectile*> enemyProjectiles;
+	list<Item*> items;
 	int timeEnemyProjectile = 150;
 	bool controlContinue = false;
 	bool controlShoot = false;

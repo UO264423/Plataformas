@@ -37,7 +37,9 @@ void GameLayer::init() {
 	enemies.clear(); // Vaciar por si reiniciamos el juego
 	goobas.clear(); // Vaciar por si reiniciamos el juego
 	projectiles.clear(); // Vaciar por si reiniciamos el juego
-
+	enemyProjectiles.clear();
+	items.clear();
+	
 	loadMap("res/" + to_string(game->currentLevel) + ".txt");
 }
 
@@ -85,6 +87,14 @@ void GameLayer::loadMapObject(char character, float x, float y)
 		enemy->y = enemy->y - enemy->height / 2;
 		enemies.push_back(enemy);
 		space->addDynamicActor(enemy);
+		break;
+	}
+	case 'I': {
+		Item* item = new Item(x, y, game);
+		// modificación para empezar a contar desde el suelo.
+		item->y = item->y - item->height / 2;
+		items.push_back(item);
+		space->addDynamicActor(item);
 		break;
 	}
 	case 'G': {
@@ -245,6 +255,9 @@ void GameLayer::update() {
 		projectile->update();
 	}
 
+	for (auto const& item : items) {
+		item->update();
+	}
 
 	// Colisiones
 	for (auto const& enemy : enemies) {
@@ -293,6 +306,17 @@ void GameLayer::update() {
 			if (!pInList) {
 				deleteProjectiles.push_back(projectile);
 			}
+		}
+	}
+
+	list<Item*> deleteItems;
+	for (auto const& item : items) {
+		if (player->isOverlap(item)) {
+			
+				deleteItems.push_back(item);
+				points += 10;
+				textPoints->content = to_string(points);
+			
 		}
 	}
 
@@ -393,8 +417,14 @@ void GameLayer::update() {
 		projectiles.remove(delProjectile);
 		enemyProjectiles.remove(delProjectile);
 		space->removeDynamicActor(delProjectile);
-		delete delProjectile;
 	}
+
+	for (auto const& deleteItem : deleteItems) {
+		items.remove(deleteItem);
+		space->removeDynamicActor(deleteItem);
+		delete deleteItem;
+	}
+
 	deleteProjectiles.clear();
 
 	
@@ -441,6 +471,10 @@ void GameLayer::draw() {
 
 	for (auto const& gooba : goobas) {
 		gooba->draw(scrollX);
+	}
+
+	for (auto const& item: items) {
+		item->draw(scrollX);
 	}
 
 	backgroundPoints->draw();
