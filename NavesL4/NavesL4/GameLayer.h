@@ -56,7 +56,8 @@ public:
 	list<Enemy*> enemies;
 	list<Gooba*> goobas;
 	list<Projectile*> projectiles;
-
+	list<Projectile*> enemyProjectiles;
+	int timeEnemyProjectile = 150;
 	bool controlContinue = false;
 	bool controlShoot = false;
 	int controlMoveY = 0;

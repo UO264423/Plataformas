@@ -63,10 +63,22 @@ void Gooba::update() {
 	else {
 		vx = 0;
 	}
-
-
-
 }
+
+Projectile* Gooba::shoot() {
+		state = game->stateShooting;
+		Projectile* projectile = new Projectile(x, y, game);
+		if (vx<0) {
+			projectile->vx = projectile->vx * -1; // Invertir
+		}
+		if (vx == 0) {
+			return NULL;
+		}
+		return projectile;
+}
+
+
+
 
 void Gooba::impacted() {
 	if (state != game->stateDying) {

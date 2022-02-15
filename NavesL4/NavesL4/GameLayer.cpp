@@ -196,10 +196,20 @@ void GameLayer::processControls() {
 }
 
 void GameLayer::update() {
+	timeEnemyProjectile--;
 	if (pause) {
 		return;
 	}
-
+	if (timeEnemyProjectile < 0) {
+		for (auto const& gooba : goobas) {
+			Projectile* newProjectile = gooba->shoot();
+			if (newProjectile != NULL) {
+				space->addDynamicActor(newProjectile);
+				enemyProjectiles.push_back(newProjectile);
+			}
+		}
+		timeEnemyProjectile = 150;
+	}
 	// Nivel superado
 	if (cup->isOverlap(player)) {
 		game->currentLevel++;
@@ -228,6 +238,10 @@ void GameLayer::update() {
 	}
 
 	for (auto const& projectile : projectiles) {
+		projectile->update();
+	}
+
+	for (auto const& projectile : enemyProjectiles) {
 		projectile->update();
 	}
 
@@ -282,6 +296,24 @@ void GameLayer::update() {
 		}
 	}
 
+
+	//Jugador golpeado por proyectil
+	for (auto const& projectile : enemyProjectiles) {
+		if (player->isOverlap(projectile)) {
+			bool pInList = std::find(deleteProjectiles.begin(),
+				deleteProjectiles.end(),
+				projectile) != deleteProjectiles.end();
+
+			if (!pInList) {
+				deleteProjectiles.push_back(projectile);
+			}
+			player->loseLife();
+			if (player->lifes <= 0) {
+				init();
+				return;
+			}
+		}
+	}
 
 
 	for (auto const& enemy : enemies) {
@@ -359,6 +391,7 @@ void GameLayer::update() {
 
 	for (auto const& delProjectile : deleteProjectiles) {
 		projectiles.remove(delProjectile);
+		enemyProjectiles.remove(delProjectile);
 		space->removeDynamicActor(delProjectile);
 		delete delProjectile;
 	}
@@ -394,6 +427,10 @@ void GameLayer::draw() {
 	}
 
 	for (auto const& projectile : projectiles) {
+		projectile->draw(scrollX);
+	}
+
+	for (auto const& projectile : enemyProjectiles) {
 		projectile->draw(scrollX);
 	}
 	cup->draw(scrollX);
