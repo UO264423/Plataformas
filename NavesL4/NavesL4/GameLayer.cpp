@@ -21,6 +21,7 @@ void GameLayer::init() {
 	space = new Space(1);
 	scrollX = 0;
 	tiles.clear();
+	tileDrops.clear();
 
 	audioBackground = new Audio("res/musica_ambiente.mp3", true);
 	audioBackground->play();
@@ -103,6 +104,14 @@ void GameLayer::loadMapObject(char character, float x, float y)
 		gooba->y = gooba->y - gooba->height / 2;
 		goobas.push_back(gooba);
 		space->addDynamicActor(gooba);
+		break;
+	}
+	case 'W': {
+		TileDrop* tile = new TileDrop("res/bloque_tierra_caer.png", x, y, game);
+		// modificación para empezar a contar desde el suelo.
+		tile->y = tile->y - tile->height / 2;
+		tileDrops.push_back(tile);
+		space->addStaticActor(tile);
 		break;
 	}
 	case '1': {
@@ -231,6 +240,11 @@ void GameLayer::update() {
 		pause = true;
 		init();
 	}
+	for(auto& const tile :tileDrops){
+		if (player->isOverlap(tile)) {
+			tile->pisar();
+		}
+	}
 
 	// Jugador se cae
 	if (player->y > HEIGHT + 80) {
@@ -246,6 +260,15 @@ void GameLayer::update() {
 	for (auto const& gooba: goobas) {
 		gooba->update();
 	}
+	//Tiles que caen
+	for (auto const& tile : tileDrops) {
+		tile->update();
+		if (tile->tiempo==0) {
+			space->removeStaticActor(tile);
+			space->addDynamicActor(tile);
+		}
+	}
+
 
 	for (auto const& projectile : projectiles) {
 		projectile->update();
@@ -455,6 +478,9 @@ void GameLayer::draw() {
 	for (auto const& tile : tiles) {
 		tile->draw(scrollX);
 	}
+	for (auto const& tile : tileDrops) {
+		tile->draw(scrollX);
+	}
 
 	for (auto const& projectile : projectiles) {
 		projectile->draw(scrollX);
@@ -476,6 +502,7 @@ void GameLayer::draw() {
 	for (auto const& item: items) {
 		item->draw(scrollX);
 	}
+
 
 	backgroundPoints->draw();
 	textPoints->draw();

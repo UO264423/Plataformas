@@ -9,6 +9,7 @@
 #include "Projectile.h"
 #include "Text.h"
 #include "Tile.h"
+#include "TileDrop.h"
 #include "Pad.h"
 
 #include "Audio.h"
@@ -56,6 +57,7 @@ public:
 	Actor* backgroundPoints;
 	list<Enemy*> enemies;
 	list<Gooba*> goobas;
+	list<TileDrop*> tileDrops;
 	list<Projectile*> projectiles;
 	list<Projectile*> enemyProjectiles;
 	list<Item*> items;
