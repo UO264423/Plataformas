@@ -114,6 +114,14 @@ void GameLayer::loadMapObject(char character, float x, float y)
 		space->addStaticActor(tile);
 		break;
 	}
+	case 'Y': {
+		Tile* tile = new Tile("res/bloque_metal.png", x, y, game);
+		// modificación para empezar a contar desde el suelo.
+		tile->y = tile->y - tile->height / 2;
+		tileSalto.push_back(tile);
+		space->addStaticActor(tile);
+		break;
+	}
 	case '1': {
 		player = new Player(x, y, game);
 		// modificación para empezar a contar desde el suelo.
@@ -243,6 +251,12 @@ void GameLayer::update() {
 	for(auto& const tile :tileDrops){
 		if (player->isOverlap(tile)) {
 			tile->pisar();
+		}
+	}
+
+	for (auto& const tile : tileSalto) {
+		if (player->isOverlap(tile)) {
+			player->jumpSuper();
 		}
 	}
 
@@ -481,6 +495,10 @@ void GameLayer::draw() {
 	for (auto const& tile : tileDrops) {
 		tile->draw(scrollX);
 	}
+	for (auto const& tile : tileSalto) {
+		tile->draw(scrollX);
+	}
+
 
 	for (auto const& projectile : projectiles) {
 		projectile->draw(scrollX);

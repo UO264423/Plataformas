@@ -58,6 +58,7 @@ public:
 	list<Enemy*> enemies;
 	list<Gooba*> goobas;
 	list<TileDrop*> tileDrops;
+	list<Tile*> tileSalto;
 	list<Projectile*> projectiles;
 	list<Projectile*> enemyProjectiles;
 	list<Item*> items;

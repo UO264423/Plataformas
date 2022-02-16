@@ -12,6 +12,7 @@ public:
 	Projectile* shoot();
 	void update();
 	void jump();
+	void jumpSuper();
 	void moveX(float axis);
 	void moveY(float axis);
 	void draw(float scrollX = 0) override; // Va a sobrescribir

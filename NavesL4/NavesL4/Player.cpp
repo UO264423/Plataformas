@@ -163,6 +163,13 @@ void Player::jump() {
 	}
 }
 
+void Player::jumpSuper() {
+	if (!onAir) {
+		vy = -32;
+		onAir = true;
+	}
+}
+
 void Player::loseLife() {
 	if (invulnerableTime <= 0) {
 		if (lifes > 0) {
